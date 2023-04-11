@@ -9,6 +9,7 @@
   --secondary-accent-color: #4d5ae5;
   --background-color: #f4f4fd;
   --background-color-hero: rgba(46, 47, 66, 0.7);
+  --background-color-backdrop: rgba(46, 47, 66, 0.4);
   --border-color: #e7e9fc;
   --accent-green-color: #31d0aa;
   --customer-icon-color: #afb1b8;
@@ -422,6 +423,7 @@ body {
 
 .customer-icon {
   fill: currentColor;
+  transition: fill var(--transition-dur-and-func);
 }
 
 /*-------------------- /CUSTOMERS--------------- */
@@ -562,3 +564,60 @@ body {
 .footer-accent:focus {
   background-color: var(--accent-green-color);
 }
+
+/*-------------------- /FOOTER--------------- */
+
+/*-------------------- BACKDROP --------------- */
+.backdrop {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color-backdrop);
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 408px;
+  height: 576px;
+  background-color: rgba(252, 252, 252, 1);
+  border-radius: 4px;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--border-color);
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  transition: border-color var(--transition-dur-and-func),
+    background-color var(--transition-dur-and-func);
+}
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+}
+.modal-close-btn-icon {
+  transition: fill var(--transition-dur-and-func);
+}
+.modal-close-btn:hover .modal-close-btn-icon,
+.modal-close-btn:focus .modal-close-btn-icon {
+  fill: var(--primary-white-color);
+}
+
+/*-------------------- /BACKDROP --------------- */
